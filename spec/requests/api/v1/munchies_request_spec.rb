@@ -41,5 +41,17 @@ RSpec.describe 'Munchies API' do
     expect(munchies[:attributes][:restaurant]).to_not have_key(:review_count)
     expect(munchies[:attributes][:restaurant]).to_not have_key(:rating)
   end
+
+  it 'returns unsuccessful request if location is missing' do
+    get "/api/v1/munchies?food=italian"
+
+    expect(response).to_not be_successful
+  end
+
+    it 'returns unsuccessful request if cuisine is missing' do
+    get "/api/v1/munchies?location=kenosha,wi"
+
+    expect(response).to_not be_successful
+  end
     
 end
