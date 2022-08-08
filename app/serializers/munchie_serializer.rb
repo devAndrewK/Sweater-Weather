@@ -1,23 +1,23 @@
 class MunchieSerializer
 
-  def self.munchies(weather, food, location)
+  def self.munchies(weather, food)
     { 
       "data": {
-      "id": "null",
-      "type": "munchie",
-      "attributes": {
-        "destination_city": location.city,
-        "forecast": {
-          "summary": weather.conditions,
-          "temperature": weather.temperature
-        }
-        "restaurant": {
-          "name": food.name,
-          "address": food.address
+        "id": "null",
+        "type": "munchie",
+        "attributes": {
+          "destination_city": food.city_state,
+          "forecast": {
+            "summary": weather.conditions,
+            "temperature": weather.temperature
+          },
+          "restaurant": {
+            "name": food.name,
+            "address": food.address
+          }
         }
       }
     }
-  }
   end
 
 end

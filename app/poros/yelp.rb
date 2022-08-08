@@ -4,6 +4,6 @@ class Yelp
   def initialize(name, location)
     @name = name
     @address = location.join(" ")
-    @city_state = location.split[0..1].join(" ")
+    @city_state = location[1].split[0..1].join(" ")
   end
 end
