@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe WeatherFacade do 
   before :each do
     response = JSON.parse(File.read('spec/fixtures/weather.json'), symbolize_names: true)
-    stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?appid=3f1e2bdc5fe6157c146052ce9ab7bf1b&exclude=minutely,alerts&lat=39.738453&lon=-104.984853&units=imperial").
+    stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?appid=#{ENV['WEATHER_KEY']}&exclude=minutely,alerts&lat=39.738453&lon=-104.984853&units=imperial").
          with(
            headers: {
        	  'Accept'=>'*/*',
