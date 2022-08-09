@@ -1,18 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe WeatherFacade do 
-  before :each do
-    response = JSON.parse(File.read('spec/fixtures/weather.json'), symbolize_names: true)
-    stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?appid=3f1e2bdc5fe6157c146052ce9ab7bf1b&exclude=minutely,alerts&lat=39.738453&lon=-104.984853&units=imperial").
-         with(
-           headers: {
-       	  'Accept'=>'*/*',
-       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	  'User-Agent'=>'Faraday v2.4.0'
-           }).
-         to_return(status: 200, body: JSON.generate(response), headers: {})
-  end
-
+RSpec.describe WeatherFacade, :vcr do 
   describe 'all_weather' do
     it 'returns weather object' do
         weather = WeatherFacade.all_weather('39.738453', '-104.984853')
@@ -41,6 +29,15 @@ RSpec.describe WeatherFacade do
         expect(daily_weather).to be_an(Array)
         expect(daily_weather.count).to eq(5)
         daily_weather.each { |day| expect(day).to be_an_instance_of(DailyWeather) }
+    end
+  end 
+
+  describe 'weather_at_destination' do
+    it 'returns weather at destination' do
+        wad = WeatherFacade.weather_at_destination('Dallas, TX', '19:29:34')
+        expect(wad).to be_a(DestinationWeather)
+        expect(wad.temperature).to be_a(Float)
+        expect(wad.conditions).to be_a(String)
     end
   end 
 end
