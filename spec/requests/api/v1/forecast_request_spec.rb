@@ -1,26 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Forecast API' do
-  before :each do
-    response = JSON.parse(File.read('spec/fixtures/weather.json'), symbolize_names: true)
-    stub_request(:get, "https://api.openweathermap.org/data/3.0/onecall?appid=#{ENV['WEATHER_KEY']}&exclude=minutely,alerts&lat=39.738453&lon=-104.984853&units=imperial").
-         with(
-           headers: {
-       	  'Accept'=>'*/*',
-       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	  'User-Agent'=>'Faraday v2.4.0'
-           }).
-         to_return(status: 200, body: JSON.generate(response), headers: {})
-    map_response = JSON.parse(File.read('spec/fixtures/mapquest.json'), symbolize_names: true)
-    stub_request(:get, "https://www.mapquestapi.com/geocoding/v1/address/?content_type=application/json&key=#{ENV['MAPQUEST_KEY']}&location=denver,co").
-         with(
-           headers: {
-       	  'Accept'=>'*/*',
-       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-       	  'User-Agent'=>'Faraday v2.4.0'
-           }).
-         to_return(status: 200, body: JSON.generate(map_response), headers: {})
-  end
+RSpec.describe 'Forecast API', :vcr do
     it 'returns forecasted weather for a location' do
       headers = { 'CONTENT_TYPE' => 'application/json' }
       get '/api/v1/forecast', headers: headers, params: { location: 'denver,co' }
@@ -33,16 +13,16 @@ RSpec.describe 'Forecast API' do
       expect(forecast[:id]).to eq(nil)
       expect(forecast[:type]).to eq('forecast')
       current_weather = forecast[:attributes][:current_weather]
-      expect(current_weather[:datetime]).to eq('2022-08-06 13:40 -0500')
-      expect(current_weather[:sunrise]).to eq('2022-08-06 07:03 -0500')
-      expect(current_weather[:sunset]).to eq('2022-08-06 21:08 -0500')
-      expect(current_weather[:temperature]).to eq(86.81)
-      expect(current_weather[:feels_like]).to eq(86.18)
-      expect(current_weather[:humidity]).to eq(39)
-      expect(current_weather[:uvi]).to eq(9.31)
-      expect(current_weather[:visibility]).to eq(10000)
-      expect(current_weather[:conditions]).to eq('clear sky')
-      expect(current_weather[:icon]).to eq('01d')
+      expect(current_weather[:datetime]).to be_a String
+      expect(current_weather[:sunrise]).to be_a String
+      expect(current_weather[:sunset]).to be_a String
+      expect(current_weather[:temperature]).to be_a Float
+      expect(current_weather[:feels_like]).to be_a Float
+      expect(current_weather[:humidity]).to be_a Integer
+      expect(current_weather[:uvi]).to be_a Float
+      expect(current_weather[:visibility]).to be_a Integer
+      expect(current_weather[:conditions]).to be_a String
+      expect(current_weather[:icon]).to be_a String
 
       expect(current_weather).to_not have_key(:pressure)
       expect(current_weather).to_not have_key(:clouds)

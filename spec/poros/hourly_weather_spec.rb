@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe HourlyWeather do
+RSpec.describe HourlyWeather, :vcr do
   it 'exists with attributes' do
     ll = GeocoderFacade.get_coordinates('Kenosha, WI')
     parsed_json = WeatherService.get_open_weather(ll.lat, ll.lng)

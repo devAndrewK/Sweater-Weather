@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe DestinationWeather do
+RSpec.describe DestinationWeather, :vcr do
   it 'exists with attributes when time is under 24 hours' do
     weather = JSON.parse(File.read('spec/fixtures/weather.json'), symbolize_names: true)
 

@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe WeatherService do 
+RSpec.describe WeatherService, :vcr do 
   it 'returns the weather based on lat long' do 
 
-    response = JSON.parse(File.read('spec/fixtures/weather.json'), symbolize_names: true)
+    response = WeatherService.get_open_weather('39.738453', '-104.984853')
 
     expect(response).to be_a(Hash)
     expect(response).to have_key(:current)

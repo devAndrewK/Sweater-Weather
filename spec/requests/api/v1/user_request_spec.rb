@@ -10,7 +10,6 @@ RSpec.describe 'Users API' do
     }
 
     post '/api/v1/users', params: body
-    # binding.pry
 
     expect(response).to be_successful
 
