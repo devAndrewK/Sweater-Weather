@@ -1,14 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Geocoder do
+RSpec.describe Geocoder, :vcr do
   it 'exists and has attributes' do
-    lat = '42.5293'
-    lng = '-87.8855'
-
-    ll = Geocoder.new(lat, lng)
+    location = GeocoderService.get_coordinates("Kenosha, WI")
+    ll = Geocoder.new(location)
 
     expect(ll).to be_a(Geocoder)
-    expect(ll.lat).to eq('42.5293')
-    expect(ll.lng).to eq('-87.8855')
+    expect(ll.lat).to eq('42.588079')
+    expect(ll.lng).to eq('-87.822877')
   end
 end
