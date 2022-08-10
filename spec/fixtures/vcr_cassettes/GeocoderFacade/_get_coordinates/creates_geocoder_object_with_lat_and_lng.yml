@@ -19,7 +19,7 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Tue, 09 Aug 2022 22:56:12 GMT
+      - Wed, 10 Aug 2022 00:08:14 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -35,13 +35,13 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Tue, 09 Aug 2022 22:56:12 GMT
+      - Wed, 10 Aug 2022 00:08:14 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
       - '0'
       Set-Cookie:
-      - JSESSIONID=2F809093107268B69B1E5C61B75BFBAA; Path=/; HttpOnly; Secure
+      - JSESSIONID=F7EDF054F09FB0F4255FA3C22B8776A5; Path=/; HttpOnly; Secure
       Status:
       - success
       Transactionweight:
@@ -53,6 +53,6 @@ http_interactions:
       string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2022 MapQuest,
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Washington,DC"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Washington","adminArea5Type":"City","adminArea4":"District
-        of Columbia","adminArea4Type":"County","adminArea3":"DC","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282772166","unknownInput":"","type":"s","latLng":{"lat":38.892062,"lng":-77.019912},"displayLatLng":{"lat":38.892062,"lng":-77.019912},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=38.892062,-77.019912|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-1680342952"}]}]}'
-  recorded_at: Tue, 09 Aug 2022 22:56:12 GMT
+        of Columbia","adminArea4Type":"County","adminArea3":"DC","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282772166","unknownInput":"","type":"s","latLng":{"lat":38.892062,"lng":-77.019912},"displayLatLng":{"lat":38.892062,"lng":-77.019912},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=38.892062,-77.019912|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-2123286437"}]}]}'
+  recorded_at: Wed, 10 Aug 2022 00:08:14 GMT
 recorded_with: VCR 6.1.0

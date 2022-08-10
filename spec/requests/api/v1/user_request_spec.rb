@@ -36,4 +36,20 @@ RSpec.describe 'Users API' do
     expect(user).to_not have_key :created_at
     expect(user).to_not have_key :updated_at
   end
+
+  it 'returns errors if passwords dont match' do
+    headers = { 'CONTENT_TYPE' => 'application/json' }
+    body = {
+      "email": "whatever@example.com",
+      "password": "password",
+      "password_confirmation": "pass"
+    }
+
+    post '/api/v1/users', params: body
+
+    expect(response).to_not be_successful
+    parsed_body = JSON.parse(response.body, symbolize_names: true)
+    expect(parsed_body[:password_confirmation].first).to eq("doesn't match Password")
+  end
+  
 end

@@ -19,11 +19,11 @@ http_interactions:
       message: ''
     headers:
       Date:
-      - Wed, 10 Aug 2022 00:08:21 GMT
+      - Wed, 10 Aug 2022 00:08:19 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
-      - '1034'
+      - '1031'
       Access-Control-Allow-Methods:
       - OPTIONS,GET,POST
       Access-Control-Allow-Origin:
@@ -35,13 +35,13 @@ http_interactions:
       Geocodetransactioncount:
       - '1'
       Last-Modified:
-      - Wed, 10 Aug 2022 00:08:21 GMT
+      - Wed, 10 Aug 2022 00:08:19 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
       - '0'
       Set-Cookie:
-      - JSESSIONID=0DFE1E410EDF3AF74AD6A8E7501C6840; Path=/; HttpOnly; Secure
+      - JSESSIONID=45654420935FB87361EAC5971BAE4B4F; Path=/; HttpOnly; Secure
       Status:
       - success
       Transactionweight:
@@ -54,8 +54,8 @@ http_interactions:
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2022 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"Kenosha,
         WI"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"Kenosha","adminArea5Type":"City","adminArea4":"Kenosha
-        County","adminArea4Type":"County","adminArea3":"WI","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282034154","unknownInput":"","type":"s","latLng":{"lat":42.588079,"lng":-87.822877},"displayLatLng":{"lat":42.588079,"lng":-87.822877},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=42.588079,-87.822877|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-2014850237"}]}]}'
-  recorded_at: Wed, 10 Aug 2022 00:08:21 GMT
+        County","adminArea4Type":"County","adminArea3":"WI","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A5XAX","geocodeQuality":"CITY","dragPoint":false,"sideOfStreet":"N","linkId":"282034154","unknownInput":"","type":"s","latLng":{"lat":42.588079,"lng":-87.822877},"displayLatLng":{"lat":42.588079,"lng":-87.822877},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=<mapquest_key>&type=map&size=225,160&locations=42.588079,-87.822877|marker-sm-50318A-1&scalebar=true&zoom=12&rand=95790823"}]}]}'
+  recorded_at: Wed, 10 Aug 2022 00:08:19 GMT
 - request:
     method: get
     uri: https://api.openweathermap.org/data/3.0/onecall?appid=<weather_key>&exclude=minutely,alerts&lat=42.588079&lon=-87.822877&units=imperial
@@ -77,7 +77,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Wed, 10 Aug 2022 00:08:21 GMT
+      - Wed, 10 Aug 2022 00:08:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -152,5 +152,5 @@ http_interactions:
         rain","icon":"10d"}],"clouds":100,"pop":1,"rain":6.25,"uvi":0.26},{"dt":1660582800,"sunrise":1660561088,"sunset":1660611218,"moonrise":1660619100,"moonset":1660575780,"moon_phase":0.64,"temp":{"day":76.64,"min":66.29,"max":77.56,"night":69.8,"eve":71.94,"morn":66.33},"feels_like":{"day":77.43,"night":70.75,"eve":72.97,"morn":66.88},"pressure":1010,"humidity":73,"dew_point":66.99,"wind_speed":6.96,"wind_deg":245,"wind_gust":11.79,"weather":[{"id":501,"main":"Rain","description":"moderate
         rain","icon":"10d"}],"clouds":24,"pop":0.87,"rain":3.09,"uvi":1},{"dt":1660669200,"sunrise":1660647553,"sunset":1660697530,"moonrise":1660706820,"moonset":1660666380,"moon_phase":0.67,"temp":{"day":71.76,"min":65.62,"max":71.76,"night":65.62,"eve":67.73,"morn":66.99},"feels_like":{"day":71.83,"night":65.55,"eve":67.77,"morn":67.53},"pressure":1016,"humidity":68,"dew_point":60.37,"wind_speed":14.97,"wind_deg":17,"wind_gust":22.59,"weather":[{"id":501,"main":"Rain","description":"moderate
         rain","icon":"10d"}],"clouds":28,"pop":0.77,"rain":1.94,"uvi":1}]}'
-  recorded_at: Wed, 10 Aug 2022 00:08:21 GMT
+  recorded_at: Wed, 10 Aug 2022 00:08:19 GMT
 recorded_with: VCR 6.1.0
